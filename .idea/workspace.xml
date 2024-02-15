@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Initial commit." />
+    <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Initial commit.">
+      <change beforePath="$PROJECT_DIR$/READMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/READMe.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708002625999</updated>
-      <workItem from="1708002627008" duration="1174000" />
+      <workItem from="1708002627008" duration="1475000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -125,7 +127,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>

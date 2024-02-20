@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Initial commit.">
-      <change beforePath="$PROJECT_DIR$/READMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/READMe.md" afterDir="false" />
+    <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Changed README.md.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/projectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/projectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/projectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/starterScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/starter-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/starter-screen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +27,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -45,9 +49,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2cPA1cjL1RVzwns1SLGTrcX8dWl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -56,6 +60,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.projectApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -84,7 +89,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708002625999</updated>
-      <workItem from="1708002627008" duration="1475000" />
+      <workItem from="1708002627008" duration="2339000" />
+      <workItem from="1708413544279" duration="2642000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -110,7 +116,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708003556323</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changed README.md.">
+      <option name="closed" value="true" />
+      <created>1708004158147</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708004158147</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Changed README.md.">
+      <option name="closed" value="true" />
+      <created>1708004326977</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708004326977</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Changed README.md.">
+      <option name="closed" value="true" />
+      <created>1708004377269</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708004377269</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +152,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -141,6 +176,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
+    <MESSAGE value="Changed README.md." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed README.md." />
   </component>
 </project>

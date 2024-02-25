@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Changed README.md.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/projectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/projectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/starterScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/starterScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/starter-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/starter-screen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +20,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -65,6 +66,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,7 +91,8 @@
       <option name="presentableId" value="Default" />
       <updated>1708002625999</updated>
       <workItem from="1708002627008" duration="2339000" />
-      <workItem from="1708413544279" duration="6136000" />
+      <workItem from="1708413544279" duration="6870000" />
+      <workItem from="1708874183569" duration="4521000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />

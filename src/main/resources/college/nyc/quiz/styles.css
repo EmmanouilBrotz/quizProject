@@ -1,0 +1,45 @@
+/* STARTER SCREEN BOX STYLING */
+.starter-screen-box{
+    -fx-background-image: url("images/starter-screen.jpg");
+    -fx-background-size: cover;
+}
+/* BUTTON STYLING */
+.custom-button {
+    -fx-background-color: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    -fx-background-radius: 12px;
+    -fx-text-fill: #FFFFFF;
+    -fx-cursor: hand;
+    -fx-font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
+    -fx-line-height: 2.5;
+    -fx-padding: 0 1rem;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-transition: box-shadow .2s ease-in-out;
+    -fx-user-select: none;
+    -fx-touch-action: manipulation;
+    -fx-white-space: nowrap;
+}
+
+.custom-button:focused {
+    -fx-box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5), 0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.custom-button:hover {
+    -fx-box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5), 0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+/* TITLE STYLING */
+.heading-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #FFA500;
+    -fx-border-color: #c0cb14;
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-alignment: center;
+}
+

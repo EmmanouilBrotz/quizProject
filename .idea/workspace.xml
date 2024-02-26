@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Changed README.md.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/starter-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/starter-screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/registerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/registerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +68,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/RafailBrotzakis/AppData/Local/SceneBuilder/SceneBuilder.exe",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -73,12 +76,17 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-20.0.2-corretto-20.0.2.1-4caba194b151-5bc9ecd2" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
@@ -93,6 +101,7 @@
       <workItem from="1708002627008" duration="2339000" />
       <workItem from="1708413544279" duration="6870000" />
       <workItem from="1708874183569" duration="4521000" />
+      <workItem from="1708964762328" duration="5639000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />

@@ -77,6 +77,13 @@
                </BorderPane.margin>
             </Button>
          </center>
+         <bottom>
+            <Label fx:id="confirmationLabel" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+         </bottom>
       </BorderPane>
    </children>
 </VBox>

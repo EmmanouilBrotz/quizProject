@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Changed README.md.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/registerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/registerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,7 @@
       <workItem from="1708413544279" duration="6870000" />
       <workItem from="1708874183569" duration="4521000" />
       <workItem from="1708964762328" duration="5639000" />
-      <workItem from="1709029064394" duration="1282000" />
+      <workItem from="1709029064394" duration="1718000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />

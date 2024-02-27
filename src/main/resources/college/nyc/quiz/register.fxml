@@ -11,6 +11,11 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="loginregisterscreen" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="college.nyc.quiz.registerController">
    <children>
+      <Button fx:id="returnButton" mnemonicParsing="false" onAction="#onReturnButtonClick" text="Return">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font>
+      </Button>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <top>
             <Label prefHeight="163.0" prefWidth="533.0" styleClass="loginregisterlabels" text="REGISTER" BorderPane.alignment="CENTER">

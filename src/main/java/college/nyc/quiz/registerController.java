@@ -1,14 +1,21 @@
 package college.nyc.quiz;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 
 public class registerController {
@@ -22,6 +29,8 @@ public class registerController {
     private PasswordField passwordField;
     @FXML
     private Label confirmationLabel;
+    @FXML
+    private Button returnButton;
 
     @FXML
     protected void registerUser() throws ClassNotFoundException {
@@ -61,5 +70,19 @@ public class registerController {
 
     private String hashAndSaltPassword(String password) {  // Return the hashed and salted password
         return BCrypt.hashpw(password, BCrypt.gensalt());
+    }
+    @FXML
+    private void onReturnButtonClick(){
+        Stage stage = (Stage) returnButton.getScene().getWindow();
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("starter-screen.fxml")); // loading the FXML file that we want to see
+            Parent root = loader.load();
+            Scene registerScene = new Scene(root); // setting the different scene on the same stage
+
+            stage.setScene(registerScene);
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }

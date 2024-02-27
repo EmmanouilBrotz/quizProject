@@ -25,31 +25,31 @@ public class registerController {
 
     @FXML
     protected void registerUser() throws ClassNotFoundException {
-        String registeredUsername = usernameField.getText();
+        String registeredUsername = usernameField.getText(); // The next 3 LoC are for getting the details that the user will be inputting.
         String registeredEmail = emailField.getText();
         String registeredPassword = passwordField.getText();
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        String url = "jdbc:mysql://localhost:3306/accounts";
+        Class.forName("com.mysql.cj.jdbc.Driver"); // Checking connection for the driver for SQL
+        String url = "jdbc:mysql://localhost:3306/accounts"; // The next 3 LoC are for connecting to the SQL database
         String username = "root";
         String password = "root";
 
-        try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String insertQuery = "INSERT INTO users (username, email, password_hash) VALUES (?,?,?)";
+        try (Connection connection = DriverManager.getConnection(url, username, password)) { // Here we make the connection and insert the data to the database
+            String insertQuery = "INSERT INTO users (username, email, password_hash) VALUES (?,?,?)"; // SQL Query to insert into the users table
             try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
                 preparedStatement.setString(1, registeredUsername);
                 preparedStatement.setString(2, registeredEmail);
                 // Hash and salt the password before storing it in the database
-                String hashedPassword = hashAndSaltPassword(registeredPassword);
+                String hashedPassword = hashAndSaltPassword(registeredPassword); // Hashing the password through the function called hashAndSaltPassword which is defined below
                 preparedStatement.setString(3, hashedPassword);
 
-                int rowsAffected = preparedStatement.executeUpdate();
-                if (rowsAffected > 0) {
+                int rowsAffected = preparedStatement.executeUpdate(); // runs the SQL query
+                if (rowsAffected > 0) { // Once the query is ran, it checks for how many rows changed, and if it's more than 0, that means the account has been registered.
                     confirmationLabel.setText("Account Registered Successfully.");
                 } else {
-                    confirmationLabel.setText("Failed to register account.");
+                    confirmationLabel.setText("Failed to register account."); // I kinda had to add an else statement but I don't think we will ever reach this point.
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException e) { // If the username has already been registered, return a label that gives them that error
            if (e.getSQLState().equals("23000")){
                confirmationLabel.setText("Cannot Register account; Same username has been used.");
            }
@@ -59,9 +59,7 @@ public class registerController {
         }
     }
 
-    private String hashAndSaltPassword(String password) {
-        // Implement a secure hashing algorithm (e.g., BCrypt) to hash and salt the password
-        // Return the hashed and salted password
+    private String hashAndSaltPassword(String password) {  // Return the hashed and salted password
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 }

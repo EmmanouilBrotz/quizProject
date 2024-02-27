@@ -23,9 +23,9 @@ public class starterScreenController {
     protected void onRegisterButtonClick() { // When the Register Button is clicked, we change the Scene to the register scene, by loading register.fxml
         Stage stage = (Stage) registerButton.getScene().getWindow();
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("register.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("register.fxml")); // loading the FXML file that we want to see
             Parent root = loader.load();
-            Scene registerScene = new Scene(root);
+            Scene registerScene = new Scene(root); // setting the different scene on the same stage
 
             stage.setScene(registerScene);
 
@@ -34,7 +34,7 @@ public class starterScreenController {
         }
     }
     @FXML
-    protected void onLoginButtonClick(){
+    protected void onLoginButtonClick(){ // Same as Register Button but for Login scene
         Stage stage = (Stage) loginButton.getScene().getWindow();
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));

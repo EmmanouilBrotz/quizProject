@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="college.nyc.quiz.mainMenuController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
@@ -17,12 +16,21 @@
             </Label>
          </center>
          <bottom>
-            <Label fx:id="welcomeLabel" text="Welcome to Project: Quiz!" BorderPane.alignment="CENTER">
+            <Label fx:id="welcomeLabel" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial" size="27.0" />
                </font>
             </Label>
          </bottom>
+      </BorderPane>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <Label text="Select one of the options Below:" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+         </top>
       </BorderPane>
    </children>
 </VBox>

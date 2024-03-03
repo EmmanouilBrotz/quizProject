@@ -9,5 +9,6 @@ public class mainMenuController {
 
     public void welcomeUser(String username){
         welcomeLabel.setText("Welcome to Project Quiz, "+ username+"!");
+
     }
 }

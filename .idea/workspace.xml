@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Changed README.md.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/registerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/registerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/login.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -101,7 +106,10 @@
       <workItem from="1708413544279" duration="6870000" />
       <workItem from="1708874183569" duration="4521000" />
       <workItem from="1708964762328" duration="5639000" />
-      <workItem from="1709029064394" duration="1718000" />
+      <workItem from="1709029064394" duration="2769000" />
+      <workItem from="1709109759965" duration="609000" />
+      <workItem from="1709114573540" duration="290000" />
+      <workItem from="1709460396458" duration="4617000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -189,5 +197,15 @@
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Changed README.md." />
     <option name="LAST_COMMIT_MESSAGE" value="Changed README.md." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

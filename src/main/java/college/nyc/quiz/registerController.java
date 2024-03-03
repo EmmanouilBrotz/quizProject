@@ -20,8 +20,6 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class registerController {
     @FXML
-    private Button registerUserButton;
-    @FXML
     private TextField usernameField;
     @FXML
     private TextField emailField;

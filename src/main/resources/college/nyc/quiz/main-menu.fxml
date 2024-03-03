@@ -7,18 +7,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="college.nyc.quiz.mainMenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="mainmenuscreen" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="college.nyc.quiz.mainMenuController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
-            <Label prefHeight="64.0" prefWidth="306.0" text="MAIN MENU" BorderPane.alignment="CENTER">
+            <Label prefHeight="76.0" prefWidth="398.0" styleClass="mainmenulabel" text="MAIN MENU" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Arial Bold" size="52.0" />
+                  <Font name="Arial Bold" size="67.0" />
                </font>
             </Label>
          </center>
          <bottom>
-            <Label fx:id="welcomeLabel" BorderPane.alignment="CENTER">
+            <Label fx:id="welcomeLabel" styleClass="mainmenulabel" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial" size="27.0" />
                </font>
@@ -27,14 +27,14 @@
       </BorderPane>
       <BorderPane prefHeight="213.0" prefWidth="1280.0">
          <top>
-            <Label text="Select one of the options Below:" BorderPane.alignment="CENTER">
+            <Label styleClass="mainmenulabel" text="Select one of the options Below:" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
             </Label>
          </top>
          <right>
-            <Button fx:id="leaderboardsButton" mnemonicParsing="false" onAction="#onSelectionClick" text="Leaderboards" BorderPane.alignment="CENTER">
+            <Button fx:id="leaderboardsButton" mnemonicParsing="false" onAction="#onSelectionClick" prefHeight="38.0" prefWidth="147.0" styleClass="mainmenubutton" text="Leaderboards" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial" size="17.0" />
                </font>
@@ -43,7 +43,7 @@
                </BorderPane.margin></Button>
          </right>
          <left>
-            <Button fx:id="quizButton" mnemonicParsing="false" onAction="#onSelectionClick" text="Play Quiz" BorderPane.alignment="CENTER">
+            <Button fx:id="quizButton" mnemonicParsing="false" onAction="#onSelectionClick" prefHeight="35.0" prefWidth="103.0" styleClass="mainmenubutton" text="Play Quiz" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial" size="17.0" />
                </font>
@@ -52,7 +52,7 @@
                </BorderPane.margin></Button>
          </left>
          <center>
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onSelectionClick" text="History" BorderPane.alignment="CENTER">
+            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onSelectionClick" prefHeight="39.0" prefWidth="91.0" styleClass="mainmenubutton" text="History" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Arial" size="17.0" />
                </font>

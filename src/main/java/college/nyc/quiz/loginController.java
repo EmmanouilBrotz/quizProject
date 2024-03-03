@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 
+import javax.xml.transform.Result;
 import java.io.IOException;
 import java.sql.*;
 
@@ -25,6 +26,9 @@ public class loginController {
     private Label errorLabel;
     @FXML
     private Button loginUserButton;
+    private String url = "jdbc:mysql://localhost:3306/accounts"; // The next 3 LoC are for connecting to the SQL database
+    private String username = "root";
+    private String password = "root";
     @FXML
     private void onReturnButtonClick(){
         Stage stage = (Stage) returnButton.getScene().getWindow();
@@ -49,11 +53,13 @@ public class loginController {
 
         if (storedHashedPassword != null && BCrypt.checkpw(password, storedHashedPassword)){ // Comparing the two passwords
             try {
+                username = retrieveUsername(usernameEmail);
                 Stage stage = (Stage) loginUserButton.getScene().getWindow();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml")); //
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
                 Parent root = loader.load();
+                mainMenuController controller = loader.getController();
                 Scene mainMenuScene = new Scene(root);
-
+                controller.welcomeUser(username);
                 stage.setScene(mainMenuScene);
 
             } catch (IOException e){
@@ -65,12 +71,9 @@ public class loginController {
 
     private String retrieveHashedPassword(String usernameEmail){
         String hashedpassword = null;
-        String url = "jdbc:mysql://localhost:3306/accounts"; // The next 3 LoC are for connecting to the SQL database
-        String username = "root";
-        String password = "root";
-        try (Connection connection = DriverManager.getConnection(url, username, password);){ // making the connection to the database
-            String sqlQuery = "SELECT password_hash FROM users WHERE username = ? OR email = ?"; // Setting the SQL query for returning the password based on username/email given
-            try (PreparedStatement statement = connection.prepareStatement(sqlQuery)){
+        try (Connection connection = DriverManager.getConnection(url, username, password)){ // making the connection to the database
+            String sqlPasswordQuery = "SELECT password_hash FROM users WHERE username = ? OR email = ?"; // Setting the SQL query for returning the password based on username/email given
+            try (PreparedStatement statement = connection.prepareStatement(sqlPasswordQuery)){
                 statement.setString(1, usernameEmail);
                 statement.setString(2, usernameEmail);
                 try (ResultSet resultSet = statement.executeQuery()){
@@ -85,6 +88,34 @@ public class loginController {
             e.printStackTrace();
         }
         return hashedpassword;
+    }
+
+    private String retrieveUsername(String usernameOrEmail){
+        if(isValidEmail(usernameOrEmail)){
+            String email = usernameOrEmail;
+            try (Connection connection = DriverManager.getConnection(url, username, password)){
+                String sqlUsernameQuery = "SELECT username FROM users WHERE email = ?";
+                try (PreparedStatement statement = connection.prepareStatement(sqlUsernameQuery)){
+                    statement.setString(1, email);
+                    try (ResultSet resultSet = statement.executeQuery()){
+                        if (resultSet.next()){
+                            return resultSet.getString("username");
+                        }
+                    }
+
+                }
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+        else{
+            return usernameOrEmail;
+        }
+        return null;
+    }
+
+    private boolean isValidEmail(String email){
+        return email.contains("@");
     }
 
 }

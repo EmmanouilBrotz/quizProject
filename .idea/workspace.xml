@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Changed README.md.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/registerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/registerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/mainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/mainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/main-menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/main-menu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,7 @@
       <workItem from="1709029064394" duration="2769000" />
       <workItem from="1709109759965" duration="609000" />
       <workItem from="1709114573540" duration="290000" />
-      <workItem from="1709460396458" duration="4617000" />
+      <workItem from="1709460396458" duration="9118000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -204,6 +202,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.sql.SQLException" package="java.sql" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

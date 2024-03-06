@@ -8,6 +8,8 @@ module college.nyc.quiz {
     requires java.sql;
     requires jbcrypt;
     requires mysql.connector.j;
+    requires json.simple;
+    requires org.apache.commons.text;
 
     opens college.nyc.quiz to javafx.fxml;
     exports college.nyc.quiz;

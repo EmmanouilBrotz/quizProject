@@ -109,7 +109,20 @@ public class loginController {
             }
         }
         else{
-            return usernameOrEmail;
+            try (Connection connection = DriverManager.getConnection(url, username, password)){
+                String sqlUsernameQuery = "SELECT username FROM users WHERE username = ?";
+                try (PreparedStatement statement = connection.prepareStatement(sqlUsernameQuery)){
+                    statement.setString(1, usernameOrEmail);
+                    try (ResultSet resultSet = statement.executeQuery()){
+                        if (resultSet.next()){
+                            return resultSet.getString("username");
+                        }
+                    }
+
+                }
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
         }
         return null;
     }

@@ -12,8 +12,6 @@ import java.io.IOException;
 
 public class starterScreenController {
 
-    private Label registerText;
-    private Label loginText;
     @FXML // @FXML is used to connect the following line to the FXML file, in this case it is done to connect buttons.
     private Button registerButton;
     @FXML
@@ -26,7 +24,6 @@ public class starterScreenController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("register.fxml")); // loading the FXML file that we want to see
             Parent root = loader.load();
             Scene registerScene = new Scene(root); // setting the different scene on the same stage
-
             stage.setScene(registerScene);
 
         } catch (IOException e){

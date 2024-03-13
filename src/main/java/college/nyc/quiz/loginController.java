@@ -30,6 +30,7 @@ public class loginController {
     private String username = "root";
     private String password = "root";
     public static String sessionUsername = ""; // Will be used to later record user_id after the quiz
+
     @FXML
     private void onReturnButtonClick(){
         Stage stage = (Stage) returnButton.getScene().getWindow();
@@ -56,13 +57,14 @@ public class loginController {
             try {
                 username = retrieveUsername(usernameEmail);
                 sessionUsername = username;
-                Stage stage = (Stage) loginUserButton.getScene().getWindow();
+
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
                 Parent root = loader.load();
                 mainMenuController controller = loader.getController();
+                Stage mainMenuStage = (Stage) loginUserButton.getScene().getWindow();
                 Scene mainMenuScene = new Scene(root);
                 controller.welcomeUser(username);
-                stage.setScene(mainMenuScene);
+                mainMenuStage.setScene(mainMenuScene);
 
             } catch (IOException e){
                 e.printStackTrace();

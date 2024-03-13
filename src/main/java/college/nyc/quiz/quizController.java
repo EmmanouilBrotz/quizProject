@@ -1,10 +1,15 @@
 package college.nyc.quiz;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -163,10 +168,11 @@ public class quizController implements Initializable {
         } else {
             // No more questions, quiz finished, logging it on database
             insertIntoDatabase();
+            showQuizResultPopup(score);
         }
     }
 
-    private int retrieveUserId(String username){
+    private int retrieveUserId(String username) {
         try (Connection connection = DriverManager.getConnection(url, dbUsername, password)) {
             String selectQuery = "SELECT user_id FROM users WHERE username = ?";  // Corrected SQL query, removed single quotes around '?'
             try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
@@ -200,5 +206,25 @@ public class quizController implements Initializable {
             }
         }
 
+    }
+
+    private void showQuizResultPopup(int score) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("quiz-result-popup.fxml"));
+            Parent root = loader.load();
+
+            quizResultPopupController popupController = loader.getController();
+            popupController.setScore(score);
+
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+
+            // Set the stage for the pop-up controller
+            popupController.setStage(stage);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

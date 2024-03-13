@@ -17,6 +17,13 @@
                </font>
             </Label>
          </center>
+         <bottom>
+            <Label fx:id="scoreLabel" text="SCORE: 0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+         </bottom>
       </BorderPane>
       <BorderPane prefHeight="115.0" prefWidth="1280.0" />
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">

@@ -5,95 +5,219 @@
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>|root||root|localhost|ALTER|G
+      <Grants>|root||acore|localhost|ALTER|G
+|root||root|localhost|ALTER|G
+|root||acore|localhost|ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
+|root||acore|localhost|APPLICATION_PASSWORD_ADMIN|G
 |root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
+|root||acore|localhost|AUDIT_ABORT_EXEMPT|G
 |root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
 |root||mysql.session|localhost|AUDIT_ABORT_EXEMPT|G
 |root||mysql.sys|localhost|AUDIT_ABORT_EXEMPT|G
 |root||root|localhost|AUDIT_ABORT_EXEMPT|G
+|root||acore|localhost|AUDIT_ADMIN|G
 |root||root|localhost|AUDIT_ADMIN|G
+|root||acore|localhost|AUTHENTICATION_POLICY_ADMIN|G
 |root||mysql.session|localhost|AUTHENTICATION_POLICY_ADMIN|G
 |root||root|localhost|AUTHENTICATION_POLICY_ADMIN|G
+|root||acore|localhost|BACKUP_ADMIN|G
 |root||mysql.session|localhost|BACKUP_ADMIN|G
 |root||root|localhost|BACKUP_ADMIN|G
+|root||acore|localhost|BINLOG_ADMIN|G
 |root||root|localhost|BINLOG_ADMIN|G
+|root||acore|localhost|BINLOG_ENCRYPTION_ADMIN|G
 |root||root|localhost|BINLOG_ENCRYPTION_ADMIN|G
+|root||acore|localhost|CLONE_ADMIN|G
 |root||mysql.session|localhost|CLONE_ADMIN|G
 |root||root|localhost|CLONE_ADMIN|G
+|root||acore|localhost|CONNECTION_ADMIN|G
 |root||mysql.session|localhost|CONNECTION_ADMIN|G
 |root||root|localhost|CONNECTION_ADMIN|G
+|root||acore|localhost|CREATE|G
 |root||root|localhost|CREATE|G
+|root||acore|localhost|CREATE ROLE|G
 |root||root|localhost|CREATE ROLE|G
+|root||acore|localhost|CREATE ROUTINE|G
 |root||root|localhost|CREATE ROUTINE|G
+|root||acore|localhost|CREATE TABLESPACE|G
 |root||root|localhost|CREATE TABLESPACE|G
+|root||acore|localhost|CREATE TEMPORARY TABLES|G
 |root||root|localhost|CREATE TEMPORARY TABLES|G
+|root||acore|localhost|CREATE USER|G
 |root||root|localhost|CREATE USER|G
+|root||acore|localhost|CREATE VIEW|G
 |root||root|localhost|CREATE VIEW|G
+|root||acore|localhost|DELETE|G
 |root||root|localhost|DELETE|G
+|root||acore|localhost|DROP|G
 |root||root|localhost|DROP|G
+|root||acore|localhost|DROP ROLE|G
 |root||root|localhost|DROP ROLE|G
+|root||acore|localhost|ENCRYPTION_KEY_ADMIN|G
 |root||root|localhost|ENCRYPTION_KEY_ADMIN|G
+|root||acore|localhost|EVENT|G
 |root||root|localhost|EVENT|G
+|root||acore|localhost|EXECUTE|G
 |root||root|localhost|EXECUTE|G
+|root||acore|localhost|FILE|G
 |root||root|localhost|FILE|G
+|root||acore|localhost|FIREWALL_EXEMPT|G
 |root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
 |root||mysql.session|localhost|FIREWALL_EXEMPT|G
 |root||mysql.sys|localhost|FIREWALL_EXEMPT|G
 |root||root|localhost|FIREWALL_EXEMPT|G
+|root||acore|localhost|FLUSH_OPTIMIZER_COSTS|G
 |root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
+|root||acore|localhost|FLUSH_STATUS|G
 |root||root|localhost|FLUSH_STATUS|G
+|root||acore|localhost|FLUSH_TABLES|G
 |root||root|localhost|FLUSH_TABLES|G
+|root||acore|localhost|FLUSH_USER_RESOURCES|G
 |root||root|localhost|FLUSH_USER_RESOURCES|G
+|root||acore|localhost|GROUP_REPLICATION_ADMIN|G
 |root||root|localhost|GROUP_REPLICATION_ADMIN|G
+|root||acore|localhost|GROUP_REPLICATION_STREAM|G
 |root||root|localhost|GROUP_REPLICATION_STREAM|G
+|root||acore|localhost|INDEX|G
 |root||root|localhost|INDEX|G
+|root||acore|localhost|INNODB_REDO_LOG_ARCHIVE|G
 |root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
+|root||acore|localhost|INNODB_REDO_LOG_ENABLE|G
 |root||root|localhost|INNODB_REDO_LOG_ENABLE|G
+|root||acore|localhost|INSERT|G
 |root||root|localhost|INSERT|G
+|root||acore|localhost|LOCK TABLES|G
 |root||root|localhost|LOCK TABLES|G
+|root||acore|localhost|PASSWORDLESS_USER_ADMIN|G
 |root||root|localhost|PASSWORDLESS_USER_ADMIN|G
+|root||acore|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||acore|localhost|PROCESS|G
 |root||root|localhost|PROCESS|G
+|root||acore|localhost|REFERENCES|G
 |root||root|localhost|REFERENCES|G
+|root||acore|localhost|RELOAD|G
 |root||root|localhost|RELOAD|G
+|root||acore|localhost|REPLICATION CLIENT|G
 |root||root|localhost|REPLICATION CLIENT|G
+|root||acore|localhost|REPLICATION SLAVE|G
 |root||root|localhost|REPLICATION SLAVE|G
+|root||acore|localhost|REPLICATION_APPLIER|G
 |root||root|localhost|REPLICATION_APPLIER|G
+|root||acore|localhost|REPLICATION_SLAVE_ADMIN|G
 |root||root|localhost|REPLICATION_SLAVE_ADMIN|G
+|root||acore|localhost|RESOURCE_GROUP_ADMIN|G
 |root||root|localhost|RESOURCE_GROUP_ADMIN|G
+|root||acore|localhost|RESOURCE_GROUP_USER|G
 |root||root|localhost|RESOURCE_GROUP_USER|G
+|root||acore|localhost|ROLE_ADMIN|G
 |root||root|localhost|ROLE_ADMIN|G
+|root||acore|localhost|SELECT|G
 |root||mysql.infoschema|localhost|SELECT|G
 |root||root|localhost|SELECT|G
+|root||acore|localhost|SENSITIVE_VARIABLES_OBSERVER|G
 |root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
+|root||acore|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||root|localhost|SERVICE_CONNECTION_ADMIN|G
+|root||acore|localhost|SESSION_VARIABLES_ADMIN|G
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
+|root||acore|localhost|SET_USER_ID|G
 |root||root|localhost|SET_USER_ID|G
+|root||acore|localhost|SHOW DATABASES|G
 |root||root|localhost|SHOW DATABASES|G
+|root||acore|localhost|SHOW VIEW|G
 |root||root|localhost|SHOW VIEW|G
+|root||acore|localhost|SHOW_ROUTINE|G
 |root||root|localhost|SHOW_ROUTINE|G
+|root||acore|localhost|SHUTDOWN|G
 |root||mysql.session|localhost|SHUTDOWN|G
 |root||root|localhost|SHUTDOWN|G
+|root||acore|localhost|SUPER|G
 |root||mysql.session|localhost|SUPER|G
 |root||root|localhost|SUPER|G
+|root||acore|localhost|SYSTEM_USER|G
 |root||mysql.infoschema|localhost|SYSTEM_USER|G
 |root||mysql.session|localhost|SYSTEM_USER|G
 |root||mysql.sys|localhost|SYSTEM_USER|G
 |root||root|localhost|SYSTEM_USER|G
+|root||acore|localhost|SYSTEM_VARIABLES_ADMIN|G
 |root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
 |root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||acore|localhost|TABLE_ENCRYPTION_ADMIN|G
 |root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
+|root||acore|localhost|TELEMETRY_LOG_ADMIN|G
 |root||root|localhost|TELEMETRY_LOG_ADMIN|G
+|root||acore|localhost|TRIGGER|G
 |root||root|localhost|TRIGGER|G
+|root||acore|localhost|UPDATE|G
 |root||root|localhost|UPDATE|G
+|root||acore|localhost|XA_RECOVER_ADMIN|G
 |root||root|localhost|XA_RECOVER_ADMIN|G
+|root||acore|localhost|grant option|G
 |root||root|localhost|grant option|G
+acore_auth|schema||acore|localhost|ALTER|G
+acore_auth|schema||acore|localhost|ALTER ROUTINE|G
+acore_auth|schema||acore|localhost|CREATE|G
+acore_auth|schema||acore|localhost|CREATE ROUTINE|G
+acore_auth|schema||acore|localhost|CREATE TEMPORARY TABLES|G
+acore_auth|schema||acore|localhost|CREATE VIEW|G
+acore_auth|schema||acore|localhost|DELETE|G
+acore_auth|schema||acore|localhost|DROP|G
+acore_auth|schema||acore|localhost|EVENT|G
+acore_auth|schema||acore|localhost|EXECUTE|G
+acore_auth|schema||acore|localhost|INDEX|G
+acore_auth|schema||acore|localhost|INSERT|G
+acore_auth|schema||acore|localhost|LOCK TABLES|G
+acore_auth|schema||acore|localhost|REFERENCES|G
+acore_auth|schema||acore|localhost|SELECT|G
+acore_auth|schema||acore|localhost|SHOW VIEW|G
+acore_auth|schema||acore|localhost|TRIGGER|G
+acore_auth|schema||acore|localhost|UPDATE|G
+acore_auth|schema||acore|localhost|grant option|G
+acore_characters|schema||acore|localhost|ALTER|G
+acore_characters|schema||acore|localhost|ALTER ROUTINE|G
+acore_characters|schema||acore|localhost|CREATE|G
+acore_characters|schema||acore|localhost|CREATE ROUTINE|G
+acore_characters|schema||acore|localhost|CREATE TEMPORARY TABLES|G
+acore_characters|schema||acore|localhost|CREATE VIEW|G
+acore_characters|schema||acore|localhost|DELETE|G
+acore_characters|schema||acore|localhost|DROP|G
+acore_characters|schema||acore|localhost|EVENT|G
+acore_characters|schema||acore|localhost|EXECUTE|G
+acore_characters|schema||acore|localhost|INDEX|G
+acore_characters|schema||acore|localhost|INSERT|G
+acore_characters|schema||acore|localhost|LOCK TABLES|G
+acore_characters|schema||acore|localhost|REFERENCES|G
+acore_characters|schema||acore|localhost|SELECT|G
+acore_characters|schema||acore|localhost|SHOW VIEW|G
+acore_characters|schema||acore|localhost|TRIGGER|G
+acore_characters|schema||acore|localhost|UPDATE|G
+acore_characters|schema||acore|localhost|grant option|G
+acore_world|schema||acore|localhost|ALTER|G
+acore_world|schema||acore|localhost|ALTER ROUTINE|G
+acore_world|schema||acore|localhost|CREATE|G
+acore_world|schema||acore|localhost|CREATE ROUTINE|G
+acore_world|schema||acore|localhost|CREATE TEMPORARY TABLES|G
+acore_world|schema||acore|localhost|CREATE VIEW|G
+acore_world|schema||acore|localhost|DELETE|G
+acore_world|schema||acore|localhost|DROP|G
+acore_world|schema||acore|localhost|EVENT|G
+acore_world|schema||acore|localhost|EXECUTE|G
+acore_world|schema||acore|localhost|INDEX|G
+acore_world|schema||acore|localhost|INSERT|G
+acore_world|schema||acore|localhost|LOCK TABLES|G
+acore_world|schema||acore|localhost|REFERENCES|G
+acore_world|schema||acore|localhost|SELECT|G
+acore_world|schema||acore|localhost|SHOW VIEW|G
+acore_world|schema||acore|localhost|TRIGGER|G
+acore_world|schema||acore|localhost|UPDATE|G
+acore_world|schema||acore|localhost|grant option|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
-      <ServerVersion>8.0.36</ServerVersion>
+      <ServerVersion>8.0.34</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -995,112 +1119,136 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="288" parent="1" name="accounts">
-      <LastIntrospectionLocalTimestamp>2024-03-06.17:03:56</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-03-13.09:21:06</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="289" parent="1" name="information_schema">
+    <schema id="289" parent="1" name="acore_auth">
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </schema>
+    <schema id="290" parent="1" name="acore_characters">
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </schema>
+    <schema id="291" parent="1" name="acore_world">
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </schema>
+    <schema id="292" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="290" parent="1" name="mysql">
+    <schema id="293" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="291" parent="1" name="performance_schema">
+    <schema id="294" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="sys">
+    <schema id="295" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="293" parent="1" name="mysql.infoschema">
+    <user id="296" parent="1" name="acore">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="297" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="294" parent="1" name="mysql.session">
+    <user id="298" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="295" parent="1" name="mysql.sys">
+    <user id="299" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="296" parent="1" name="root">
+    <user id="300" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="297" parent="288" name="games">
+    <table id="301" parent="288" name="games">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="298" parent="288" name="users">
+    <table id="302" parent="288" name="users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="299" parent="297" name="game_id">
+    <column id="303" parent="301" name="game_id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="300" parent="297" name="user_id">
+    <column id="304" parent="301" name="user_id">
       <DasType>int|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="301" parent="297" name="correct_questions">
-      <DasType>tinyint|0s</DasType>
+    <column id="305" parent="301" name="score">
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="302" parent="297" name="date">
+    <column id="306" parent="301" name="completion_time">
       <DasType>datetime|0s</DasType>
       <Position>4</Position>
     </column>
-    <foreign-key id="303" parent="297" name="games_ibfk_1">
+    <foreign-key id="307" parent="301" name="games_ibfk_1">
       <ColNames>user_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="304" parent="297" name="PRIMARY">
+    <index id="308" parent="301" name="PRIMARY">
       <ColNames>game_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="305" parent="297" name="user_id">
+    <index id="309" parent="301" name="user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="306" parent="297" name="PRIMARY">
+    <key id="310" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="307" parent="298" name="user_id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="311" parent="302" name="user_id">
+      <AutoIncrement>13</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="308" parent="298" name="username">
+    <column id="312" parent="302" name="username">
       <DasType>varchar(50)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="309" parent="298" name="email">
+    <column id="313" parent="302" name="email">
       <DasType>varchar(100)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="310" parent="298" name="password_hash">
+    <column id="314" parent="302" name="password_hash">
       <DasType>varchar(64)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="311" parent="298" name="PRIMARY">
+    <index id="315" parent="302" name="PRIMARY">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="312" parent="298" name="PRIMARY">
+    <index id="316" parent="302" name="username_unique">
+      <ColNames>username</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="317" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="318" parent="302" name="username_unique">
+      <UnderlyingIndexName>username_unique</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

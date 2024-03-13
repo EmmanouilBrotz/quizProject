@@ -13,10 +13,14 @@ import org.apache.commons.text.StringEscapeUtils;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import static java.sql.Timestamp.valueOf;
 
 public class quizController implements Initializable {
 
@@ -34,6 +38,11 @@ public class quizController implements Initializable {
 
     @FXML
     private Button option4Button;
+    @FXML
+    private Label scoreLabel;
+    private String url = "jdbc:mysql://localhost:3306/accounts"; // The next 3 LoC are for connecting to the SQL database
+    private String dbUsername = "root"; // Playing a lot with usernames here so I changed the name of the variable
+    private String password = "root";
 
     private JSONArray resultsArray;
     private int currentQuestionIndex = 0;
@@ -56,10 +65,20 @@ public class quizController implements Initializable {
         }
 
         // Set action for answer buttons
-        option1Button.setOnAction(event -> handleAnswer(0));
-        option2Button.setOnAction(event -> handleAnswer(1));
-        option3Button.setOnAction(event -> handleAnswer(2));
-        option4Button.setOnAction(event -> handleAnswer(3));
+        setOptionButtonHandler(option1Button, 0);
+        setOptionButtonHandler(option2Button, 1);
+        setOptionButtonHandler(option3Button, 2);
+        setOptionButtonHandler(option4Button, 3);
+    }
+
+    private void setOptionButtonHandler(Button button, int index) { // Added to clean code a bit, if I don't have this the optionButtonHandlers look ugly (the 4 LoC right above)
+        button.setOnAction(event -> {
+            try {
+                handleAnswer(index);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     private void displayQuestion(int index) {
@@ -99,7 +118,7 @@ public class quizController implements Initializable {
         }
     }
 
-    private void setButtonDynamicWidth(Button button, String text){
+    private void setButtonDynamicWidth(Button button, String text) {
         button.setText(StringEscapeUtils.unescapeHtml4(text));
 
         double textWidth = new Text(text).getLayoutBounds().getWidth();
@@ -109,7 +128,7 @@ public class quizController implements Initializable {
     }
 
 
-    private void handleAnswer(int selectedOptionIndex) {
+    private void handleAnswer(int selectedOptionIndex) throws SQLException {
         // Check if the selected option is correct
         JSONObject questionObject = (JSONObject) resultsArray.get(currentQuestionIndex);
         String correctAnswer = (String) questionObject.get("correct_answer");
@@ -129,14 +148,12 @@ public class quizController implements Initializable {
                 break;
         }
 
-        boolean isCorrect = selectedAnswer.equals(correctAnswer);
-        System.out.println("Selected answer: " + selectedAnswer);
-        System.out.println("Is correct: " + isCorrect);
+        boolean isCorrect = StringEscapeUtils.unescapeHtml4(selectedAnswer).equals(StringEscapeUtils.unescapeHtml4(correctAnswer));
 
         // Update score if the answer is correct
         if (isCorrect) {
             score++;
-            System.out.println("Score: " + score);
+            scoreLabel.setText("SCORE: " + score);
         }
 
         // Move to the next question
@@ -144,10 +161,44 @@ public class quizController implements Initializable {
         if (currentQuestionIndex < resultsArray.size()) {
             displayQuestion(currentQuestionIndex);
         } else {
-            // No more questions, quiz finished
-            System.out.println("Quiz finished");
-            System.out.println("Final score: " + score);
-            // You can add your logic here for what happens when the quiz is finished, such as storing the score in a database
+            // No more questions, quiz finished, logging it on database
+            insertIntoDatabase();
         }
+    }
+
+    private int retrieveUserId(String username){
+        try (Connection connection = DriverManager.getConnection(url, dbUsername, password)) {
+            String selectQuery = "SELECT user_id FROM users WHERE username = ?";  // Corrected SQL query, removed single quotes around '?'
+            try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
+                preparedStatement.setString(1, username);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return resultSet.getInt("user_id");  // Retrieve the user_id from the result set
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0; // Can't find User_id
+    }
+
+    private void insertIntoDatabase() throws SQLException {
+        String storedUsername = loginController.sessionUsername;
+        LocalDateTime completionDatetime = LocalDateTime.now();
+        try (Connection connection = DriverManager.getConnection(url, dbUsername, password)) { // Here we make the connection and insert the data to the database
+            String insertQuery = "INSERT INTO games (user_id, score, completion_time) VALUES (?,?,?)"; // SQL Query to insert into games table
+            try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+                preparedStatement.setInt(1, retrieveUserId(storedUsername));
+                preparedStatement.setInt(2, score);
+                preparedStatement.setTimestamp(3, valueOf(completionDatetime));
+
+                preparedStatement.executeUpdate(); // runs the SQL query
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 }

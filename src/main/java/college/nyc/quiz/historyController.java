@@ -1,25 +1,25 @@
 package college.nyc.quiz;
 
 
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static college.nyc.quiz.loginController.sessionUsername;
 
 public class historyController implements Initializable {
     @FXML
-    private TableView<String> gameTableView;
+    private TableView<GameData> gameTableView;
     @FXML
     private TableColumn<String, Integer> gameIDColumn;
     @FXML
@@ -72,22 +72,56 @@ public class historyController implements Initializable {
     }
 
     private void inputDataIntoColumns(){
-        if(gameTableView != null){
-            gameTableView.getColumns().clear();
-        }
+
         ObservableList<Integer> column1Data = FXCollections.observableArrayList(gameIds);
         ObservableList<Integer> column2Data = FXCollections.observableArrayList(scores);
         ObservableList<String> column3Data = FXCollections.observableArrayList(completionDates);
 
-        gameIDColumn.setCellValueFactory(cellData -> {
-            int rowIndex = cellData.getTableView().getItems().indexOf(cellData.getValue());
-            if (rowIndex >= 0 && rowIndex < column1Data.size()) {
-                return new SimpleIntegerProperty(column1Data.get(rowIndex)).asObject();
-            } else {
-                return new SimpleIntegerProperty().asObject();
-            }
-        });
+// Create a list of GameData instances by combining the data from the three lists
+        List<GameData> gameDataList = new ArrayList<>();
+        int maxSize = Math.min(gameIds.size(), Math.min(scores.size(), completionDates.size()));
+        for (int i = 0; i < maxSize; i++) {
+            int gameId = gameIds.get(i);
+            int score = scores.get(i);
+            String completionDate = completionDates.get(i);
+            gameDataList.add(new GameData(gameId, score, completionDate));
+        }
 
+// Create an observable list of GameData instances
+        ObservableList<GameData> gameData = FXCollections.observableArrayList(gameDataList);
+
+// Set the items in the TableView to display the combined data
+        gameTableView.setItems(gameData);
+
+// Set the cell value factories for each column to extract the data from the GameData instances
+        gameIDColumn.setCellValueFactory(new PropertyValueFactory<>("gameId"));
+        scoreColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
+        completionDateColumn.setCellValueFactory(new PropertyValueFactory<>("completionDate"));
+    }
+
+    // Define a custom data model to represent the combined data
+    public class GameData {
+        private final int gameId;
+        private final int score;
+        private final String completionDate;
+
+        public GameData(int gameId, int score, String completionDate) {
+            this.gameId = gameId;
+            this.score = score;
+            this.completionDate = completionDate;
+        }
+
+        public int getGameId() {
+            return gameId;
+        }
+
+        public int getScore() {
+            return score;
+        }
+
+        public String getCompletionDate() {
+            return completionDate;
+        }
     }
 
 

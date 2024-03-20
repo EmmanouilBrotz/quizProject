@@ -3,6 +3,7 @@ package college.nyc.quiz;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -52,6 +53,7 @@ public class quizController implements Initializable {
     private JSONArray resultsArray;
     private int currentQuestionIndex = 0;
     private int score = 0;
+    private Stage quizStage;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -168,7 +170,7 @@ public class quizController implements Initializable {
         } else {
             // No more questions, quiz finished, logging it on database
             insertIntoDatabase();
-            showQuizResultPopup(score);
+            showQuizResult(score);
         }
     }
 
@@ -208,23 +210,20 @@ public class quizController implements Initializable {
 
     }
 
-    private void showQuizResultPopup(int score) {
+    private void showQuizResult(int score) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("quiz-result-popup.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("quiz-result.fxml"));
             Parent root = loader.load();
-
-            quizResultPopupController popupController = loader.getController();
+            quizResultController popupController = loader.getController();
             popupController.setScore(score);
 
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setScene(new Scene(root));
-
-            // Set the stage for the pop-up controller
-            popupController.setStage(stage);
+            quizStage.getScene().setRoot(root);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void setStage(Stage stage){
+        this.quizStage = stage;
     }
 }

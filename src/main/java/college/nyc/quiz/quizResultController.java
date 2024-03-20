@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class quizResultPopupController {
+public class quizResultController {
     @FXML
     private Label scoreLabel;
     private Stage stage;
@@ -25,10 +25,19 @@ public class quizResultPopupController {
 
     @FXML
     private void returnToMainMenu(ActionEvent event) throws IOException {
-        stage.close(); // Close the current popup window
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
-        Parent root = loader.load();
-        Stage mainStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        mainStage.setScene(new Scene(root));
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml"));
+            Parent root = loader.load();
+            Stage mainStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            mainStage.setScene(new Scene(root));
+
+            Scene mainMenuScene = new Scene(root);
+
+            stage.setScene(mainMenuScene);
+        } catch (IllegalArgumentException e){
+
+        }
+
+
     }
 }

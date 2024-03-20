@@ -27,23 +27,28 @@ public class mainMenuController {
 
     }
     @FXML
-    private void onSelectionClick(ActionEvent event) {
+    private void onSelectionClick(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
+        Parent root = null;
 
         if (event.getSource() == quizButton) {
             loader.setLocation(getClass().getResource("quiz.fxml"));
+            root = loader.load();
+            quizController quizController = loader.getController();
+            quizController.setStage(stage);
         } else if (event.getSource() == historyButton) {
             loader.setLocation(getClass().getResource("history.fxml"));
+            root = loader.load();
         } else if (event.getSource() == leaderboardsButton) {
             loader.setLocation(getClass().getResource("leaderboards.fxml"));
+            root = loader.load();
         }
-        try {
-            Parent root = loader.load();
-            Scene quizScene = new Scene(root);
-            stage.setScene(quizScene);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (stage.getScene() == null) {
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } else {
+            stage.getScene().setRoot(root); // Set the new root for the existing scene
         }
     }
     }

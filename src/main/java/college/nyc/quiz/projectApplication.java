@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class projectApplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(projectApplication.class.getResource("starter-screen.fxml")); // FXML Loader is used to load the FXML file. FXML files look a lot like HTML files.

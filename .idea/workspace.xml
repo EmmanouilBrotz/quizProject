@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77a2c611-2caf-47dd-8110-8484f20f22a8" name="Changes" comment="Changed README.md.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b293254-135d-4a71-9929-ebdf86465674.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b293254-135d-4a71-9929-ebdf86465674.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/mainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/mainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/projectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/projectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/historyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/historyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/quizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/quizController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/quizResultPopupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/college/nyc/quiz/quizResultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/quiz-result-popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/quiz-result.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/history.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/college/nyc/quiz/history.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +89,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="college.nyc.quiz" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="projectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="college.nyc.quiz.projectApplication" />
@@ -141,7 +141,7 @@
       <workItem from="1709109759965" duration="609000" />
       <workItem from="1709114573540" duration="290000" />
       <workItem from="1709460396458" duration="13240000" />
-      <workItem from="1710921419435" duration="2688000" />
+      <workItem from="1710921419435" duration="10691000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <option name="closed" value="true" />
@@ -243,5 +243,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="quizCont" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

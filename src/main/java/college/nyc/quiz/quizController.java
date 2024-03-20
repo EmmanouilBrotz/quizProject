@@ -3,13 +3,10 @@ package college.nyc.quiz;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -174,7 +171,7 @@ public class quizController implements Initializable {
         }
     }
 
-    private int retrieveUserId(String username) {
+    public int retrieveUserId(String username) {
         try (Connection connection = DriverManager.getConnection(url, dbUsername, password)) {
             String selectQuery = "SELECT user_id FROM users WHERE username = ?";  // Corrected SQL query, removed single quotes around '?'
             try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {

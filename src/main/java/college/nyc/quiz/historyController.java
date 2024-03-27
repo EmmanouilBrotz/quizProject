@@ -63,14 +63,7 @@ public class historyController implements Initializable {
     }
 
 
-    public static class Game {
-        private int game_id;
-        private int user_id;
-        private int score;
-        private String completionDate;
 
-
-    }
 
     protected void pullGameData(int userId){
 
@@ -123,15 +116,23 @@ public class historyController implements Initializable {
     }
 
     // Define a custom data model to represent the combined data
-    public class GameData {
+    protected static class GameData {
         private final int gameId;
         private final int score;
         private final String completionDate;
+        private final String user;
 
         public GameData(int gameId, int score, String completionDate) {
             this.gameId = gameId;
             this.score = score;
             this.completionDate = completionDate;
+            this.user = null;
+        }
+        public GameData(int gameId, int score, String completionDate, String username){
+            this.gameId = gameId;
+            this.score = score;
+            this.completionDate = completionDate;
+            this.user = username;
         }
 
         public int getGameId() {
@@ -144,6 +145,9 @@ public class historyController implements Initializable {
 
         public String getCompletionDate() {
             return completionDate;
+        }
+        public String getUser(){
+            return user;
         }
     }
 

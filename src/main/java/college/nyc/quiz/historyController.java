@@ -4,11 +4,17 @@ package college.nyc.quiz;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
@@ -26,6 +32,8 @@ public class historyController implements Initializable {
     private TableColumn<String, Integer> scoreColumn;
     @FXML
     private TableColumn<String, String> completionDateColumn;
+    @FXML
+    private Button returnButton;
     ArrayList<Integer> gameIds = new ArrayList<>();
     ArrayList<Integer> scores = new ArrayList<>();
     ArrayList<String> completionDates = new ArrayList<>();
@@ -37,6 +45,21 @@ public class historyController implements Initializable {
         quizController quizCont = new quizController();
         pullGameData(quizCont.retrieveUserId(sessionUsername));
         inputDataIntoColumns();
+    }
+
+    @FXML
+    private void onReturnButtonClick(){
+        Stage stage = (Stage) returnButton.getScene().getWindow();
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml")); // loading the FXML file that we want to see
+            Parent root = loader.load();
+            Scene registerScene = new Scene(root); // setting the different scene on the same stage
+
+            stage.setScene(registerScene);
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 

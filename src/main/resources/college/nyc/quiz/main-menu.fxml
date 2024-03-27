@@ -60,6 +60,9 @@
                   <Insets />
                </BorderPane.margin></Button>
          </center>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#onReturnButtonClick" prefHeight="34.0" prefWidth="90.0" text="RETURN" BorderPane.alignment="CENTER" fx:id="returnButton"/>
+         </bottom>
       </BorderPane>
    </children>
 </VBox>

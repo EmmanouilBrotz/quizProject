@@ -21,6 +21,8 @@ public class mainMenuController {
     private Button historyButton;
     @FXML
     private Button leaderboardsButton;
+    @FXML
+    private Button returnButton;
 
     public void welcomeUser(String username){
         welcomeLabel.setText("Welcome to Project Quiz, "+ username+"!");
@@ -49,6 +51,20 @@ public class mainMenuController {
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(root); // Set the new root for the existing scene
+        }
+    }
+    @FXML
+    private void onReturnButtonClick(){
+        Stage stage = (Stage) returnButton.getScene().getWindow();
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("starter-screen.fxml")); // loading the FXML file that we want to see
+            Parent root = loader.load();
+            Scene registerScene = new Scene(root); // setting the different scene on the same stage
+
+            stage.setScene(registerScene);
+
+        } catch (IOException e){
+            e.printStackTrace();
         }
     }
     }

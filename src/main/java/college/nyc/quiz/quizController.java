@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
@@ -43,6 +44,8 @@ public class quizController implements Initializable {
     private Button option4Button;
     @FXML
     private Label scoreLabel;
+    @FXML
+    private Button returnButton;
     private String url = "jdbc:mysql://localhost:3306/accounts"; // The next 3 LoC are for connecting to the SQL database
     private String dbUsername = "root"; // Playing a lot with usernames here so I changed the name of the variable
     private String password = "root";
@@ -73,6 +76,20 @@ public class quizController implements Initializable {
         setOptionButtonHandler(option2Button, 1);
         setOptionButtonHandler(option3Button, 2);
         setOptionButtonHandler(option4Button, 3);
+    }
+    @FXML
+    private void onReturnButtonClick(){
+        Stage stage = (Stage) returnButton.getScene().getWindow();
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml")); // loading the FXML file that we want to see
+            Parent root = loader.load();
+            Scene registerScene = new Scene(root); // setting the different scene on the same stage
+
+            stage.setScene(registerScene);
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     private void setOptionButtonHandler(Button button, int index) { // Added to clean code a bit, if I don't have this the optionButtonHandlers look ugly (the 4 LoC right above)

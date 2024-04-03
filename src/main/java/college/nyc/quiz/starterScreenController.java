@@ -37,7 +37,6 @@ public class starterScreenController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
             Scene loginScene = new Scene(root);
-
             stage.setScene(loginScene);
         } catch (IOException e){
             e.printStackTrace();

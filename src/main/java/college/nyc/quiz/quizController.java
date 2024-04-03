@@ -58,7 +58,7 @@ public class quizController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            URL apiUrl = new URL("https://opentdb.com/api.php?amount=10&category=9"); // Open the URL with the JSON file
+            URL apiUrl = new URL(pickCategoryController.categoryURL); // Open the URL with the JSON file
             InputStreamReader reader = new InputStreamReader(apiUrl.openStream()); // Create reader
             JSONParser parser = new JSONParser(); // Create parser
             JSONObject questionApi = (JSONObject) parser.parse(reader); // Read the parser into the Object

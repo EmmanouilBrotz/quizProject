@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="college.nyc.quiz.pickCategoryController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <Label prefHeight="83.0" prefWidth="539.0" text="CHOOSE CATEGORY" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Arial" size="52.0" />
+               </font>
+            </Label>
+         </center>
+         <top>
+            <Button fx:id="returnButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="62.0" text="Return" BorderPane.alignment="TOP_LEFT">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </top>
+      </BorderPane>
+      <HBox alignment="CENTER" prefHeight="444.0" prefWidth="1280.0">
+         <children>
+            <Button fx:id="multipleChoiceButton" mnemonicParsing="false" onAction="#categorySelection" text="Multiple Choice">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="trueFalseButton" mnemonicParsing="false" onAction="#categorySelection" text="True / False">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="200.0" right="300.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="anyButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#categorySelection" prefHeight="38.0" prefWidth="60.0" text="Any">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -35,10 +35,8 @@ public class mainMenuController {
         Parent root = null;
 
         if (event.getSource() == quizButton) {
-            loader.setLocation(getClass().getResource("quiz.fxml"));
+            loader.setLocation(getClass().getResource("pick-category.fxml"));
             root = loader.load();
-            quizController quizController = loader.getController();
-            quizController.setStage(stage);
         } else if (event.getSource() == historyButton) {
             loader.setLocation(getClass().getResource("history.fxml"));
             root = loader.load();

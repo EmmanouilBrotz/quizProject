@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="college.nyc.quiz.pickCategoryController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="college.nyc.quiz.pickCategoryController" style="-fx-background-color: orange" stylesheets="@styles.css">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
@@ -19,7 +19,7 @@
             </Label>
          </center>
          <top>
-            <Button fx:id="returnButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="62.0" text="Return" BorderPane.alignment="TOP_LEFT" onAction="#returnToMainMenu">
+            <Button fx:id="returnButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="62.0" text="Return" BorderPane.alignment="TOP_LEFT" onAction="#returnToMainMenu" styleClass="quizButton">
                <font>
                   <Font size="14.0" />
                </font>
@@ -28,7 +28,7 @@
       </BorderPane>
       <HBox alignment="CENTER" prefHeight="444.0" prefWidth="1280.0">
          <children>
-            <Button fx:id="multipleChoiceButton" mnemonicParsing="false" onAction="#categorySelection" text="Multiple Choice">
+            <Button fx:id="multipleChoiceButton" mnemonicParsing="false" onAction="#categorySelection" text="Multiple Choice" styleClass="quizButton">
                <font>
                   <Font size="17.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button fx:id="trueFalseButton" mnemonicParsing="false" onAction="#categorySelection" text="True / False">
+            <Button fx:id="trueFalseButton" mnemonicParsing="false" onAction="#categorySelection" text="True / False" styleClass="quizButton">
                <font>
                   <Font size="17.0" />
                </font>
@@ -44,7 +44,7 @@
                   <Insets left="200.0" right="300.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="anyButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#categorySelection" prefHeight="38.0" prefWidth="60.0" text="Any">
+            <Button fx:id="anyButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#categorySelection" prefHeight="38.0" prefWidth="60.0" text="Any" styleClass="quizButton">
                <font>
                   <Font size="17.0" />
                </font>

@@ -28,12 +28,12 @@
       <BorderPane prefHeight="115.0" prefWidth="1280.0" />
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
          <children>
-            <Button fx:id="option3Button" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" styleClass="button-6" text="Button 3" />
-            <Button fx:id="option1Button" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" styleClass="button-6" text="Button 1" />
-            <Button fx:id="option2Button" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" styleClass="button-6" text="Button 2" />
-            <Button fx:id="option4Button" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" styleClass="button-6" text="Button 4" />
+            <Button fx:id="option3Button" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" styleClass="quizButton" text="Button 3" />
+            <Button fx:id="option1Button" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" styleClass="quizButton" text="Button 1" />
+            <Button fx:id="option2Button" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" styleClass="quizButton" text="Button 2" />
+            <Button fx:id="option4Button" mnemonicParsing="false" prefHeight="38.0" prefWidth="91.0" styleClass="quizButton" text="Button 4" />
          </children>
       </HBox>
-      <Button fx:id="returnButton" mnemonicParsing="false" onAction="#onReturnButtonClick" text="Quit Quiz" styleClass="button-6"/>
+      <Button fx:id="returnButton" mnemonicParsing="false" onAction="#onReturnButtonClick" text="Quit Quiz" styleClass="quizButton"/>
    </children>
 </VBox>

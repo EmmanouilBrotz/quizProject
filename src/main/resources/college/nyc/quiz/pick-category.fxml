@@ -19,7 +19,7 @@
             </Label>
          </center>
          <top>
-            <Button fx:id="returnButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="62.0" text="Return" BorderPane.alignment="TOP_LEFT">
+            <Button fx:id="returnButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="62.0" text="Return" BorderPane.alignment="TOP_LEFT" onAction="#returnToMainMenu">
                <font>
                   <Font size="14.0" />
                </font>

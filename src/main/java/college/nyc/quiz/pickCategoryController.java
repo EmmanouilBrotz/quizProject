@@ -43,5 +43,20 @@ public class pickCategoryController {
 
     }
 
+    @FXML
+    private void returnToMainMenu(){
+        Stage stage = (Stage) returnButton.getScene().getWindow();
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("main-menu.fxml")); // loading the FXML file that we want to see
+            Parent root = loader.load();
+            Scene registerScene = new Scene(root); // setting the different scene on the same stage
+
+            stage.setScene(registerScene);
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 
 }

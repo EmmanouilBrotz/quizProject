@@ -29,6 +29,7 @@ public class registerController {
     private Label confirmationLabel;
     @FXML
     private Button returnButton;
+    errorHandler errorHandlerObserver = new errorHandler();
 
     @FXML
     protected void registerUser() throws ClassNotFoundException {
@@ -61,7 +62,8 @@ public class registerController {
                confirmationLabel.setText("Cannot Register account; Same username has been used.");
            }
            else{
-               e.printStackTrace();
+               String errorMessage = "An Error occured: " + e.getMessage();
+               errorHandlerObserver.update(errorMessage);
            }
         }
     }
@@ -80,7 +82,8 @@ public class registerController {
             stage.setScene(registerScene);
 
         } catch (IOException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
 }

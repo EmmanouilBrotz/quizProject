@@ -39,6 +39,7 @@ public class leaderboardsController implements Initializable {
     ArrayList<String> users = new ArrayList<>();
     ArrayList<Integer> scores = new ArrayList<>();
     ArrayList<String> completionDates = new ArrayList<>();
+    errorHandler errorHandlerObserver = new errorHandler();
 
 @Override
 public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -65,7 +66,8 @@ public void initialize(URL url, ResourceBundle resourceBundle) {
                 }
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
 
@@ -112,7 +114,8 @@ public void initialize(URL url, ResourceBundle resourceBundle) {
             stage.setScene(registerScene);
 
         } catch (IOException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
 

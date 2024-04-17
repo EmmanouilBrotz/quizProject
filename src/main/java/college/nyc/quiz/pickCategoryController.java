@@ -21,6 +21,7 @@ public class pickCategoryController {
     private Button anyButton;
     @FXML
     private Button returnButton;
+    errorHandler errorHandlerObserver = new errorHandler();
 
     @FXML
     private void categorySelection(ActionEvent event) throws IOException {
@@ -54,7 +55,8 @@ public class pickCategoryController {
             stage.setScene(registerScene);
 
         } catch (IOException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
 

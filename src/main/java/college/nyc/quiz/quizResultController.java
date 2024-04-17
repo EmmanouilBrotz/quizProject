@@ -15,6 +15,7 @@ public class quizResultController {
     @FXML
     private Label scoreLabel;
     private Stage stage;
+    errorHandler errorHandlerObserver = new errorHandler();
 
     protected void setScore(int score){
         scoreLabel.setText(String.valueOf(score));
@@ -35,7 +36,8 @@ public class quizResultController {
 
             stage.setScene(mainMenuScene);
         } catch (IllegalArgumentException e){
-
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
 
 

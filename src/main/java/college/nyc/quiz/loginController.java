@@ -11,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 
-import javax.xml.transform.Result;
 import java.io.IOException;
 import java.sql.*;
 
@@ -30,6 +29,7 @@ public class loginController {
     private String username = "root";
     private String password = "root";
     public static String sessionUsername = ""; // Will be used to later record user_id after the quiz
+    errorHandler errorHandlerObserver = new errorHandler();
 
     @FXML
     private void onReturnButtonClick(){
@@ -42,7 +42,8 @@ public class loginController {
             stage.setScene(registerScene);
 
         } catch (IOException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
 
@@ -67,7 +68,8 @@ public class loginController {
                 mainMenuStage.setScene(mainMenuScene);
 
             } catch (IOException e){
-                e.printStackTrace();
+                String errorMessage = "An Error occured: " + e.getMessage();
+                errorHandlerObserver.update(errorMessage);
             }
         } else { errorLabel.setText("Invalid Username/Email or Password."); }
 
@@ -89,7 +91,8 @@ public class loginController {
 
 
         } catch (SQLException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
         return hashedpassword;
     }
@@ -109,7 +112,8 @@ public class loginController {
 
                 }
             } catch (SQLException e){
-                e.printStackTrace();
+                String errorMessage = "An Error occured: " + e.getMessage();
+                errorHandlerObserver.update(errorMessage);
             }
         }
         else{
@@ -125,7 +129,8 @@ public class loginController {
 
                 }
             } catch (SQLException e){
-                e.printStackTrace();
+                String errorMessage = "An Error occured: " + e.getMessage();
+                errorHandlerObserver.update(errorMessage);
             }
         }
         return null;

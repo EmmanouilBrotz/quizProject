@@ -54,7 +54,7 @@ public class quizController implements Initializable {
     private int currentQuestionIndex = 0;
     private int score = 0;
     private Stage quizStage;
-
+    errorHandler errorHandlerObserver = new errorHandler();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -68,7 +68,8 @@ public class quizController implements Initializable {
             displayQuestion(currentQuestionIndex);
 
         } catch (IOException | ParseException e) {
-            throw new RuntimeException(e);
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
 
         // Set action for answer buttons
@@ -88,7 +89,8 @@ public class quizController implements Initializable {
             stage.setScene(registerScene);
 
         } catch (IOException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
 
@@ -97,7 +99,8 @@ public class quizController implements Initializable {
             try {
                 handleAnswer(index);
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                String errorMessage = "An Error occured: " + e.getMessage();
+                errorHandlerObserver.update(errorMessage);
             }
         });
     }
@@ -153,21 +156,13 @@ public class quizController implements Initializable {
         // Check if the selected option is correct
         JSONObject questionObject = (JSONObject) resultsArray.get(currentQuestionIndex);
         String correctAnswer = (String) questionObject.get("correct_answer");
-        String selectedAnswer = null;
-        switch (selectedOptionIndex) {
-            case 0:
-                selectedAnswer = option1Button.getText();
-                break;
-            case 1:
-                selectedAnswer = option2Button.getText();
-                break;
-            case 2:
-                selectedAnswer = option3Button.getText();
-                break;
-            case 3:
-                selectedAnswer = option4Button.getText();
-                break;
-        }
+        String selectedAnswer = switch (selectedOptionIndex) {
+            case 0 -> option1Button.getText();
+            case 1 -> option2Button.getText();
+            case 2 -> option3Button.getText();
+            case 3 -> option4Button.getText();
+            default -> null;
+        };
 
         boolean isCorrect = StringEscapeUtils.unescapeHtml4(selectedAnswer).equals(StringEscapeUtils.unescapeHtml4(correctAnswer));
 
@@ -200,7 +195,8 @@ public class quizController implements Initializable {
                 }
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
         return 0; // Can't find User_id
     }
@@ -218,7 +214,8 @@ public class quizController implements Initializable {
                 preparedStatement.executeUpdate(); // runs the SQL query
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                String errorMessage = "An Error occured: " + e.getMessage();
+                errorHandlerObserver.update(errorMessage);
             }
         }
 
@@ -234,7 +231,8 @@ public class quizController implements Initializable {
             quizStage.getScene().setRoot(root);
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
     public void setStage(Stage stage){

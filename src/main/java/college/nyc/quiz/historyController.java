@@ -37,6 +37,7 @@ public class historyController implements Initializable {
     ArrayList<Integer> gameIds = new ArrayList<>();
     ArrayList<Integer> scores = new ArrayList<>();
     ArrayList<String> completionDates = new ArrayList<>();
+    errorHandler errorHandlerObserver = new errorHandler();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -58,7 +59,8 @@ public class historyController implements Initializable {
             stage.setScene(registerScene);
 
         } catch (IOException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
 
@@ -82,7 +84,8 @@ public class historyController implements Initializable {
 
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
 
     }

@@ -16,6 +16,7 @@ public class starterScreenController {
     private Button registerButton;
     @FXML
     private Button loginButton;
+    errorHandler errorHandlerObserver = new errorHandler();
 
     @FXML
     protected void onRegisterButtonClick() { // When the Register Button is clicked, we change the Scene to the register scene, by loading register.fxml
@@ -27,7 +28,8 @@ public class starterScreenController {
             stage.setScene(registerScene);
 
         } catch (IOException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
     @FXML
@@ -39,7 +41,8 @@ public class starterScreenController {
             Scene loginScene = new Scene(root);
             stage.setScene(loginScene);
         } catch (IOException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
 }

@@ -23,6 +23,7 @@ public class mainMenuController {
     private Button leaderboardsButton;
     @FXML
     private Button returnButton;
+    errorHandler errorHandlerObserver = new errorHandler();
 
     public void welcomeUser(String username){
         welcomeLabel.setText("Welcome to Project Quiz, "+ username+"!");
@@ -62,7 +63,8 @@ public class mainMenuController {
             stage.setScene(registerScene);
 
         } catch (IOException e){
-            e.printStackTrace();
+            String errorMessage = "An Error occured: " + e.getMessage();
+            errorHandlerObserver.update(errorMessage);
         }
     }
     }
